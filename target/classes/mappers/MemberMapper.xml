@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MemberMapper">
+	
+<cache />
+
+	<insert id="memberInsert" parameterType="Member" >
+		insert into member(MEMBER_ID, MEMBER_NUM, MEMBER_PW, MEMBER_BIR, 
+		GENDER, EMAIL, MEMBER_PH, MEMBER_GRADE, MEMBER_REG, MEMBER_NAME)
+		values (#{memberId},mem_seq.nextval,#{memberPw}, #{memberBir},#{memberGender},
+		#{email}, #{memberPh1}, 1, sysdate, #{memberName})
+	</insert>
+	<sql id="basecolumn">
+		MEMBER_ID, MEMBER_NUM, MEMBER_PW, MEMBER_BIR, 
+		GENDER, EMAIL, MEMBER_PH, MEMBER_GRADE, MEMBER_REG, MEMBER_NAME
+	</sql>
+	<resultMap type="Member" id="baseMember">
+		<id column="MEMBER_NUM" jdbcType="BIGINT" property="memberNum"/>
+		<result column="MEMBER_NAME" jdbcType="VARCHAR" property="memberName"/>
+		<result column="MEMBER_BIR" jdbcType = "TIMESTAMP" 
+		property="memberBir"/>
+		<result column="MEMBER_PH" jdbcType="VARCHAR" property="memberPh1"/>
+		<result column="EMAIL" jdbcType="VARCHAR" property="email"/>
+		<result column="MEMBER_ID" jdbcType="VARCHAR" property="memberId"/>
+		<result column="MEMBER_PW" jdbcType="VARCHAR" property="memberPw"/>
+	</resultMap>
+	<select id="userCheck" parameterType="Member" resultMap="baseMember">
+		select 
+			<include refid="basecolumn" />
+		from member
+		where member_id = #{memberId} and member_pw = #{memberPw}
+	</select>
+	<select id="userCheck1" parameterType="Member" resultMap="baseMember">
+		select 
+			<include refid="basecolumn" />
+		from member
+		where member_id = #{memberId}
+	</select>
+</mapper>
