@@ -38,6 +38,7 @@ public class MemberLoginService {
 	}
 
 	public String loginPro(Model model, LoginCommand loginCommand, HttpSession session, HttpServletResponse response) {
+		String path = null;
 		Member member = sessionRepository.userCheck(loginCommand.getId1(), loginCommand.getPw());
 		if (member == null) {
 			model.addAttribute("msg111", "계정이 존재하지 않습니다.");
@@ -45,6 +46,24 @@ public class MemberLoginService {
 			AuthInfo authInfo = new AuthInfo(member.getMemberId(), member.getEmail(), member.getMemberName());
 			session.setAttribute("memid", authInfo);
 		}
+			/*
+			if (member.getMemberGrade() == 0) {
+				System.out.println("관리자");
+				AuthInfo authInfo = new AuthInfo(member.getMemberId(), member.getEmail(), member.getMemberName());
+				session.setAttribute("memid", authInfo);
+				path = "redirect:main";
+			} else if (member.getMemberGrade() == 1) {
+				System.out.println("일반회원");
+				AuthInfo authInfo = new AuthInfo(member.getMemberId(), member.getEmail(), member.getMemberName());
+				session.setAttribute("memid", authInfo);
+				path = "redirect:main";
+			} else if (member.getMemberGrade() == 2) {
+				System.out.println("기업회원");
+				AuthInfo authInfo = new AuthInfo(member.getMemberId(), member.getEmail(), member.getMemberName());
+				session.setAttribute("memid", authInfo);
+				path = "redirect:main";
+			}
+		} */
 		return "redirect:main";
 	}
 }

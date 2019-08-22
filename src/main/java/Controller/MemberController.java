@@ -61,4 +61,9 @@ public class MemberController{
 		memberLogoutService.logout(session, response);
 		return "redirect:main";
 	}
+	@RequestMapping("/mypage")
+	public String main(Model model) {
+		return "MemberView/mypage";
+	}
+	
 }

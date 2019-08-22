@@ -14,7 +14,7 @@ public class Member implements Serializable{
 	private String interests;
 	private String addr;
 	private String email;
-	private String memberGrade;
+	private Integer memberGrade;
 	private Timestamp memberReg;
 	public String getMemberId() {
 		return memberId;
@@ -76,10 +76,10 @@ public class Member implements Serializable{
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getMemberGrade() {
+	public Integer getMemberGrade() {
 		return memberGrade;
 	}
-	public void setMemberGrade(String memberGrade) {
+	public void setMemberGrade(Integer memberGrade) {
 		this.memberGrade = memberGrade;
 	}
 	public Timestamp getMemberReg() {

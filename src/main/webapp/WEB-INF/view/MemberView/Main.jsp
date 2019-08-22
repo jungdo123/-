@@ -3762,7 +3762,7 @@ input, select, textarea {
 								 </li>
        									<%}else { %>
        									<li>
-          								<a  href="/OurArtGallery/memberInfo.naver">${memberName } 님 환영합니다 </a>
+          								<a  href="mypage">${memberName } 님 환영합니다 </a>
           								</li>
           								<li>
           								<a  href="logout">Log Out</a>
