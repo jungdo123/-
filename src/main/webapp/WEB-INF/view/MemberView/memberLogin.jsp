@@ -113,7 +113,7 @@ a {
       <div class="input-group-append">
       <span class="input-group-text"><i class="fas fa-key"></i></span>
       </div>
-      <form:input path="pw" class="form-control input_pass" placeholder="비밀번호를 입력하세요." />
+      <form:password path="pw" class="form-control input_pass" placeholder="비밀번호를 입력하세요." />
       </div>
       <div class="form-group">
       <div class="custom-control custom-checkbox">

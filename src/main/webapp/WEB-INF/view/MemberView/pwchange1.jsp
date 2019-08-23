@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<form action = "pwcheck" method="post" name="frm" >
+	비밀번호 : <input type="password" name = "pw" id = "pw" /><br />
+	<input type="submit" value="확인" />
+</form>
 </body>
 </html>

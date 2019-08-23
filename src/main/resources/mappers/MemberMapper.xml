@@ -25,6 +25,13 @@
 		<result column="MEMBER_ID" jdbcType="VARCHAR" property="memberId"/>
 		<result column="MEMBER_PW" jdbcType="VARCHAR" property="memberPw"/>
 	</resultMap>
+	<select id="memberSelectId" parameterType="String" resultMap="baseMember">
+		SELECT
+	  		<include refid="basecolumn" />
+		FROM member
+		where MEMBER_ID = #{id1}
+
+	</select>
 	<select id="userCheck" parameterType="Member" resultMap="baseMember">
 		select 
 			<include refid="basecolumn" />
@@ -37,4 +44,9 @@
 		from member
 		where member_id = #{memberId}
 	</select>
+	<update id="pwChange" parameterType="pwChan">
+		update member
+		set member_pw = #{newPw}
+		where member_id = #{memberId} and member_pw = #{pw}
+	</update>
 </mapper>
