@@ -3694,18 +3694,17 @@ input, select, textarea {
 										<tr>
 											<th id="title">아이디</th>
 											<td>${member12.memberId}</td>
-										</tr><tr></tr>
-													
+										</tr>
 												
 										<tr>
 											<td id="title">이름</td>
 											<td>${member12.memberName}</td>
-										</tr><tr></tr>
+										</tr>
 												
 										<tr>
 											<td id="title">성별</td>
-											<td>${member12.gender}</td>
-										</tr><tr></tr>
+											<td>${member12.memberGender}</td>
+										</tr>
 												
 										<tr>
 											<td id="title">생일</td>
@@ -3714,22 +3713,21 @@ input, select, textarea {
 												${member.birthmm}월 
 												${member.birthdd}일
 											</td>
-										</tr><tr></tr>
+										</tr>
 										<tr>
 											<td id="title">이메일</td>
 											<td>
-												${member.mail1}@${member.mail2}
+												${member.mail1}@${member.email}
 											</td>
-										</tr><tr></tr>
+										</tr>
 										<tr>
 											<td id="title">휴대전화</td>
-											<td>${member12.memberPh}</td>
-										</tr><tr></tr>
+											<td>${member12.memberPh1}</td>
+										</tr>
 										
 										<tr>
 											<td id="title">주소</td>
 											<td>
-												${member.address}
 											</td>
 										</tr>
 										

@@ -18,7 +18,7 @@
 		body .btn { text-align:center;}
 		.table #email {display:inline; }
 		</style>
-<!-- 
+
 	<script type="text/javascript">
 	
 		// 회원가입 화면의 입력값들을 검사한다.
@@ -79,27 +79,26 @@
 		
 		
 		// 취소 버튼 클릭시 첫화면으로 이동
-		function goFirstForm() {
-			location.href="MainForm.do";
-		}	
+		//function goFirstForm() {
+		//	location.href="MainForm.do";
+		//}	
 		
 		// 아이디 중복체크 화면open
-		function openIdChk(){
+		//function openIdChk(){
 		
-			window.name = "parentForm";
-			window.open("member/IdCheckForm.jsp",
-					"chkForm", "width=500, height=300, resizable = no, scrollbars = no");	
-		}
+		//	window.name = "parentForm";
+		//	window.open("member/IdCheckForm.jsp",
+		//			"chkForm", "width=500, height=300, resizable = no, scrollbars = no");	
+		//}
 
 		// 아이디 입력창에 값 입력시 hidden에 idUncheck를 세팅한다.
 		// 이렇게 하는 이유는 중복체크 후 다시 아이디 창이 새로운 아이디를 입력했을 때
 		// 다시 중복체크를 하도록 한다.
-		function inputIdChk(){
-			document.userInfo.idDuplication.value ="idUncheck";
-		}
+		//function inputIdChk(){
+		//	document.userInfo.idDuplication.value ="idUncheck";
+		//}
 		
 	</script>
-	-->
 </head>
 <body>
 		<br><br>
@@ -154,8 +153,7 @@
 				<tr>
 					<th id="title">이메일</th>
 					<td>
-						<form:input path="email" id="email" style="width:51%" maxlength="50"/>&nbsp@&nbsp
-						
+<form:input path="email" id="email" style="width:25%" maxlength="20"/>&nbsp@&nbsp<form:input path="emailAddr" id="emailAddr" style="width:25%" maxlength="50"/>
 					</td>
 				</tr>
 					
@@ -169,22 +167,22 @@
 				<div id = "addr">
 					<th id="title"><br/><br/><br/>주소</th>
 					<td>
-								<input type="text" id="sample6_postcode" placeholder="우편번호">
+								<form:input path="addr" id="sample6_postcode" placeholder="우편번호"/>
 <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
-<input type="text" id="sample6_address" placeholder="주소" size = 45><br>
-<input type="text" id="sample6_detailAddress" placeholder="상세주소">
-<input type="text" id="sample6_extraAddress" placeholder="참고항목">
+<form:input path="addr" id="sample6_address" placeholder="주소" size = "45"/><br>
+<form:input path="addr" id="sample6_detailAddress" placeholder="상세주소"/>
+<form:input path="addr" id="sample6_extraAddress" />
 				</td>
 				</div>
 				</tr>
 					<th>관심분야</th>
-						<td><input type ="checkbox" name="like"  checked value ="Y"/>축구
-							<input type ="checkbox" name="like" value ="Y"/>야구
-							<input type ="checkbox" name="like" value ="Y"/>풋살
-							<input type ="checkbox" name="like" value ="Y"/>여행
-							<input type ="checkbox" name="like" value ="Y"/>운동
-							<input type ="checkbox" name="like" value ="Y"/>요리
-							<input type ="checkbox" name="like" value ="Y"/>방탈출
+<td><form:checkbox path = "interests" name="like" value ="Y"/>축구
+							<form:checkbox path = "interests"  name="like" value ="Y"/>야구
+							<form:checkbox path = "interests"  name="like" value ="Y"/>풋살
+							<form:checkbox path = "interests"  name="like" value ="Y"/>여행
+							<form:checkbox path = "interests"  name="like" value ="Y"/>운동
+							<form:checkbox path = "interests"  name="like" value ="Y"/>요리
+							<form:checkbox path = "interests"  name="like" value ="Y"/>방탈출
 							</td>
 								</tr>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>

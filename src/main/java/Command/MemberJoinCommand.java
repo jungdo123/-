@@ -10,7 +10,29 @@ public class MemberJoinCommand {
 	private String memberBir;
 	private Integer gender;
 	private String email;
+	private String emailAddr;
 	private String memberPh;
+	private String addr;
+	private String interests;
+	
+	public String getInterests() {
+		return interests;
+	}
+	public void setInterests(String interests) {
+		this.interests = interests;
+	}
+	public String getEmailAddr() {
+		return emailAddr;
+	}
+	public void setEmailAddr(String emailAddr) {
+		this.emailAddr = emailAddr;
+	}
+	public String getAddr() {
+		return addr;
+	}
+	public void setAddr(String addr) {
+		this.addr = addr;
+	}
 	public String getId1() {
 		return id1;
 	}

@@ -16,6 +16,14 @@ public class Member implements Serializable{
 	private String email;
 	private Integer memberGrade;
 	private Timestamp memberReg;
+	private String emailAddr;
+	
+	public String getEmailAddr() {
+		return emailAddr;
+	}
+	public void setEmailAddr(String emailAddr) {
+		this.emailAddr = emailAddr;
+	}
 	public String getMemberId() {
 		return memberId;
 	}
