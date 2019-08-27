@@ -8,6 +8,8 @@
 			"	
 >
 	<bean id = "member"  class="Model.DTO.Member" />
+	<bean id = "partner" class="Model.DTO.Partner"/>
+	
 	<bean id = "memberJoinService" class="Service.MemberJoinService" />
 	<bean id = "memberLoginService" class="Service.MemberLoginService" />
 	<bean id = "memberLogoutService" class="Service.MemberLogoutService" />
@@ -15,7 +17,16 @@
 	<bean id = "pwChangeActService" class="Service.PwChangeActService" />
 	<bean id = "memberModService" class="Service.MemberModService" />
 	<bean id = "memberConfirmIdService" class="Service.MemberConfirmIdService" />
-	<bean id = "sessionRepository" class="Repository.SessionRepository" />
+	<bean id = "partnerAddService" class = "Service.PartnerAddService" />
+	<bean id = "searchPartnerService" class = "Service.SearchPartnerService" />
+	<bean id = "partnerMoreService" class = "Service.PartnerMoreService" />
+	<bean id = "partnerModifyService" class = "Service.PartnerModifyService"/>
+	<bean id = "partnerDeleteActionService" class = "Service.PartnerDeleteActionService"/>
+	<bean id = "partnerDelService" class = "Service.PartnerDelService"/>
+
+
+	<bean id = "sessionRepository" class = "Repository.SessionRepository"/>
+	<bean id = "partnerRepository" class = "Repository.PartnerRepository"/>
 
 
 </beans>

@@ -49,7 +49,8 @@ public class MemberLoginService {
 				System.out.println("관리자");
 				AuthInfo authInfo = new AuthInfo(member.getMemberId(), member.getEmail(), member.getMemberName());
 				session.setAttribute("memid", authInfo);
-				path = "redirect:main";
+				System.out.println("관리자 로그인입니다.");
+				path = "ManagerView/main";
 			} else if (member.getMemberGrade() == 1) {
 				System.out.println("일반회원");
 				AuthInfo authInfo = new AuthInfo(member.getMemberId(), member.getEmail(), member.getMemberName());
@@ -62,6 +63,7 @@ public class MemberLoginService {
 				path = "redirect:main";
 			}
 		}
-		return "redirect:main";
+		System.out.println(path+"결과문의 path입니다.");
+		return path;
 	}
 }

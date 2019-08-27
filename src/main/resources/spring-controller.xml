@@ -8,4 +8,7 @@
 			"	
 >
 	<bean class = "Controller.MemberController" />
+	<bean class = "Controller.PartnerController"/>
+	<bean class = "Controller.PartnerDeleteController"/>
+	<bean class = "Controller.PartnerModifyController"/>
 </beans>

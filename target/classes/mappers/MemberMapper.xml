@@ -9,7 +9,7 @@
 		insert into member(MEMBER_ID, MEMBER_NUM, MEMBER_PW, MEMBER_BIR, 
 		GENDER, EMAIL, MEMBER_PH, MEMBER_GRADE, MEMBER_REG, MEMBER_NAME,  EMAILADDR, INTERESTS, ADDR)
 		values (#{memberId},mem_seq.nextval,#{memberPw}, #{memberBir},#{memberGender},
-		#{email}, #{memberPh1}, 0, sysdate, #{memberName},  1, #{interests}, #{addr})
+		#{email}, #{memberPh1}, 1, sysdate, #{memberName},  #{emailAddr}, #{interests}, #{addr})
 	</insert>
 	<sql id="basecolumn">
 		MEMBER_ID, MEMBER_NUM, MEMBER_PW, MEMBER_BIR, 

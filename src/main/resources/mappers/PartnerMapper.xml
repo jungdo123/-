@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="PartnerMapper">
+<cache />
+	<insert id = "partnerInsert" parameterType = "Partner">
+		INSERT INTO PARTNER_MEMBER(PARTNER_NUM, PARTNER_ID, COMP_SORT_CODE, COMP_ADDR, 
+		                           COMP_RUN, COMP_RUN1, COMP_PH, COMP_PRES, COMP_NAME, CONT_COMMISSION, ZONE)
+		VALUES(COMP_SEQ.NEXTVAL, #{partnerId}, #{compSortCode}, #{compAddr}, #{compRun}, #{compRun1}, #{compPh}, #{compPres}, #{compName}, #{commission}, #{zone})
+	</insert>
+	<sql id = "base">
+	 PARTNER_ID, COMP_SORT_CODE, PARTNER_NUM, COMP_PRES, COMP_NAME, CONT_COMMISSION, ZONE, COMP_PH, COMP_RUN, COMP_RUN1, COMP_ADDR
+	</sql>
+ 
+	<resultMap type="Partner" id="selectPartner">
+		<id column = "PARTNER_ID" jdbcType="VARCHAR" property="partnerId"/>
+		<id column = "COMP_SORT_CODE" jdbcType="VARCHAR" property="compSortCode"/>
+		<result column="PARTNER_NUM" jdbcType="BIGINT" property="partnerNum"/>
+		<result column="COMP_PRES" jdbcType="VARCHAR" property="compPres"/>
+		<result column="COMP_NAME" jdbcType="VARCHAR" property="compName"/>
+		<result column="CONT_COMMISSION" jdbcType="VARCHAR" property="commission"/>
+		<result column="ZONE" jdbcType="VARCHAR" property="zone"/>
+		<result column="COMP_PH" jdbcType="VARCHAR" property="compPh"/>
+		<result column="COMP_RUN" jdbcType="VARCHAR" property="compRun"/>
+		<result column="COMP_RUN1" jdbcType="VARCHAR" property="compRun1"/>
+		<result column="COMP_ADDR" jdbcType="VARCHAR" property="compAddr"/>
+		
+	</resultMap>
+	<select id = "partnerSelect" parameterType = "String" resultMap="selectPartner">
+		SELECT	
+			<include refid="base"/>
+			FROM PARTNER_MEMBER
+			WHERE ZONE = #{zone} or COMP_SORT_CODE = #{compSortCode}
+	</select>
+	<select id="partnerSelectId" parameterType="String" resultMap = "selectPartner">
+		Select
+			<include refid ="base"/>
+			FROM PARTNER_MEMBER
+			WHERE PARTNER_ID = #{partnerId}
+	</select>
+	
+	
+	<update id="updatePartner" parameterType="Partner">
+		UPDATE PARTNER_MEMBER
+			<trim prefix="set" suffixOverrides=",">
+			<if test ="compSortCode != null">
+			COMP_SORT_CODE = #{compSortCode},
+			</if>
+			<if test = "compName != null">
+			COMP_NAME = #{compName},
+			</if>
+			<if test = "compRun != null">
+			COMP_RUN = #{compRun},
+			</if> 
+			<if test = "compRun1 != null">
+			COMP_RUN1 = #{compRun1},
+			</if> 
+			<if test = "compPh != null">
+			COMP_PH = #{compPh},
+			</if> 
+			</trim>
+			<where>
+				PARTNER_ID = #{partnerId}
+			</where>
+	</update>
+	<delete id = "partnerDel" parameterType ="Partner">
+		delete from PARTNER_MEMBER
+		WHERE PARTNER_ID = #{partnerId}
+	</delete>
+
+	
+</mapper>
