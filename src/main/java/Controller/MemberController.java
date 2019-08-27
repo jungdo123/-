@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import Command.LoginCommand;
 import Command.MemberJoinCommand;
 import Command.PwChangeCommand;
+import Service.MemberConfirmIdService;
 import Service.MemberJoinService;
 import Service.MemberLoginService;
 import Service.MemberLogoutService;
@@ -36,6 +37,8 @@ public class MemberController {
 	private PwChangeActService pca;
 	@Autowired
 	private MemberModService mms;
+	@Autowired
+	private MemberConfirmIdService memberConfirmIdService;
 
 	@RequestMapping("/moveReg")
 	public String terms(Model model) {
@@ -58,6 +61,13 @@ public class MemberController {
 	public String login(Model model) {
 		model.addAttribute("loginCommand", new LoginCommand());
 		return "MemberView/memberLogin";
+	}
+	
+	@RequestMapping("/confirmId")
+	public String confirmId(@RequestParam(value = "id1") String id1,
+			Model model) {
+		memberConfirmIdService.getSelectId(id1,model);
+		return "MemberView/confirmId";
 	}
 
 	@RequestMapping("/MemberLogAction")

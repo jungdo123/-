@@ -7,9 +7,9 @@
 
 	<insert id="memberInsert" parameterType="Member" >
 		insert into member(MEMBER_ID, MEMBER_NUM, MEMBER_PW, MEMBER_BIR, 
-		GENDER, EMAIL, MEMBER_PH, MEMBER_GRADE, MEMBER_REG, MEMBER_NAME, ADDR, EMAILADDR, INTERESTS)
-		values (#{memberId},mem_seq.nextval,#{memberPw}, #{memberBir},#{memberGender},
-		#{email}, #{memberPh1}, 0, sysdate, #{memberName}, #{addr}, #{emailAddr}, #{interests})
+		GENDER, EMAIL, MEMBER_PH, MEMBER_GRADE, MEMBER_REG, MEMBER_NAME,  EMAILADDR, INTERESTS)
+		values (#{memberId},mem_seq.nextval,1, sysdate,1,
+		1, 1, 0, sysdate, 1,  1, 1)
 	</insert>
 	<sql id="basecolumn">
 		MEMBER_ID, MEMBER_NUM, MEMBER_PW, MEMBER_BIR, 

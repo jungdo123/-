@@ -96,7 +96,7 @@ public class SessionRepository {
 		String statement =  namespace + ".memberDel"; 
 		result = sqlSession.delete(statement, member);
 		return result;
-	}
+	}*/
 	public String getSelectId(String id1) {
 		String memberId = null;
 		String statement =  namespace + ".memberSelectId"; 
@@ -106,11 +106,6 @@ public class SessionRepository {
 		}
 		return memberId;
 	}
-	public void insertMember(Member member) {
-		String statement =  namespace + ".memberInsert"; 
-		sqlSession.insert(statement, member);
-	}
-*/
 
 	public void insertMember(Member member) {
 		// TODO Auto-generated method stub

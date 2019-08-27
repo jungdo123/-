@@ -7,7 +7,7 @@ public class Member implements Serializable{
 	private String memberId;
 	private String memberPw;
 	private Integer memberNum;
-	private Timestamp memberBir;
+	private String memberBir;
 	private String memberName;
 	private Integer memberGender;
 	private String memberPh1;
@@ -42,10 +42,11 @@ public class Member implements Serializable{
 	public void setMemberNum(Integer memberNum) {
 		this.memberNum = memberNum;
 	}
-	public Timestamp getMemberBir() {
+	
+	public String getMemberBir() {
 		return memberBir;
 	}
-	public void setMemberBir(Timestamp memberBir) {
+	public void setMemberBir(String memberBir) {
 		this.memberBir = memberBir;
 	}
 	public String getMemberName() {

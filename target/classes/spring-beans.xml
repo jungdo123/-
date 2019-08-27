@@ -14,6 +14,7 @@
 	<bean id = "pwChangeService" class="Service.PwChangeService" />
 	<bean id = "pwChangeActService" class="Service.PwChangeActService" />
 	<bean id = "memberModService" class="Service.MemberModService" />
+	<bean id = "memberConfirmIdService" class="Service.MemberConfirmIdService" />
 	<bean id = "sessionRepository" class="Repository.SessionRepository" />
 
 
