@@ -7,9 +7,9 @@
 
 	<insert id="memberInsert" parameterType="Member" >
 		insert into member(MEMBER_ID, MEMBER_NUM, MEMBER_PW, MEMBER_BIR, 
-		GENDER, EMAIL, MEMBER_PH, MEMBER_GRADE, MEMBER_REG, MEMBER_NAME,  EMAILADDR, INTERESTS)
-		values (#{memberId},mem_seq.nextval,1, sysdate,1,
-		1, 1, 0, sysdate, 1,  1, 1)
+		GENDER, EMAIL, MEMBER_PH, MEMBER_GRADE, MEMBER_REG, MEMBER_NAME,  EMAILADDR, INTERESTS, ADDR)
+		values (#{memberId},mem_seq.nextval,#{memberPw}, #{memberBir},#{memberGender},
+		#{email}, #{memberPh1}, 0, sysdate, #{memberName},  1, #{interests}, #{addr})
 	</insert>
 	<sql id="basecolumn">
 		MEMBER_ID, MEMBER_NUM, MEMBER_PW, MEMBER_BIR, 
@@ -25,6 +25,7 @@
 		<result column="MEMBER_ID" jdbcType="VARCHAR" property="memberId"/>
 		<result column="MEMBER_PW" jdbcType="VARCHAR" property="memberPw"/>
 		<result column="INTERESTS" jdbcType="VARCHAR" property="interests"/>
+		<result column="MEMBER_GRADE" jdbcType="VARCHAR" property="memberGrade"/>
 	</resultMap>
 	<select id="memberSelectId" parameterType="String" resultMap="baseMember">
 		SELECT

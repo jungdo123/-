@@ -3762,7 +3762,7 @@ input, select, textarea {
 								 </li>
        									<%}else { %>
        									<li>
-          								<a  href="mypage">${memberName } 님 환영합니다 </a>
+          								<a  href="mypage"> 마이페이지 </a>
           								</li>
           								<li>
           								<a  href="logout">Log Out</a>
@@ -3928,123 +3928,7 @@ input, select, textarea {
 						</div>
 					</div>
 
-					<!-- Sidebar -->
-					<div id="sidebar">
-						<div class="inner">
-
-							<!-- Search -->
-								<section id="search" class="alt">
-									<form method="post" action="#">
-										<input type="text" name="query" id="query" placeholder="Search" />
-									</form>
-								</section>
-
-							<!-- Menu -->
-								<nav id="menu">
-									<header class="major">
-										<h2>Menu</h2>
-									</header>
-									<ul>
-										<li>
-											<span class="opener"><b>마 이 페 이 지</b></span>
-											<ul>
-												<li><a href="#">구 매  내 역</a></li>
-												<li><a href="#"></a></li>	
-												<li><a href="#">정 보 수 정  및  탈 퇴</a></li>
-												
-											</ul>
-										</li>	
-										<li>
-											<span class="opener"><b>식 당</b></span>
-											<ul>
-												<li><a href="#">한 식</a></li>
-												<li><a href="#">양 식</a></li>
-												<li><a href="#">중 식</a></li>
-												<li><a href="#">일 식</a></li>
-											</ul>
-										</li>
-										<li>
-											<span class="opener"><b>문 화</b></span>
-											<ul>
-												<li><a href="#">실 시 간  음 악 정 보</a></li>
-												<li><a href="#">콘 서 트</a></li>
-												<li><a href="#">체 험</a></li>
-											</ul>
-										</li>
-										<li>
-											<span class="opener"><b>운 동</b></span>
-											<ul>
-												<li><a href="#">스 포 츠 관 람</a></li>
-												<li><a href="#">대 여</a></li>
-												<li><a href="#">운 동  꿀 팁</a></li>
-											</ul>
-										</li>
-
-										<li>
-											<span class="opener"><b>커 뮤 니 티</b></span>
-											<ul>
-												<li><a href="#">모 집 게 시 판</a></li>
-												<li><a href="#">후 기 게 시 판</a></li>
-												<li><a href="#">자 유 게 시 판</a></li>
-											</ul>
-										</li>
-										<li>
-											<span class="opener"><b>고 객 센 터</b></span>
-											<ul>
-												<li><a href="#">1 : 1  문 의</a></li>
-												<li><a href="#">F A Q</a></li>
-												<li><a href="#">파 트 너  신 청</a></li>
-											</ul>
-										</li>
-										
-									</ul>
-								</nav>
-
-							<!-- Section -->
-								<section>
-									
-										<h2 class="ss">쏠</h2> 로들의 <h2 class ="ss">쉼</h2><h2 class="ss"> </h2> 터
-									</header>
-									<div class="mini-posts">
-										<article>
-											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-										</article>
-									</div>
-									<ul class="actions">
-										<li><a href="#" class="button">More</a></li>
-									</ul>
-								</section>
-
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Get in touch</h2>
-									</header>
-									<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-									<ul class="contact">
-										<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
-										<li class="icon solid fa-phone">(000) 000-0000</li>
-										<li class="icon solid fa-home">1234 Somewhere Road #8254<br />
-										Nashville, TN 00000-0000</li>
-									</ul>
-								</section>
-
-							<!-- Footer -->
-								<footer id="footer">
-									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-								</footer>
-
-						</div>
-					</div>
+					
 
 			</div>
 

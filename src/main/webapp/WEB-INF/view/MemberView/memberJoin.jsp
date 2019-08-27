@@ -306,13 +306,13 @@
 				</div>
 				</tr>
 					<th>관심분야</th>
-<td><form:checkbox path = "interests" name="like" value ="Y"/>축구
-							<form:checkbox path = "interests"  name="like" value ="Y"/>야구
-							<form:checkbox path = "interests"  name="like" value ="Y"/>풋살
-							<form:checkbox path = "interests"  name="like" value ="Y"/>여행
-							<form:checkbox path = "interests"  name="like" value ="Y"/>운동
-							<form:checkbox path = "interests"  name="like" value ="Y"/>요리
-							<form:checkbox path = "interests"  name="like" value ="Y"/>방탈출
+<td><form:checkbox path = "interests" name="interests" value ="Y"/>축구
+							<form:checkbox path = "interests"  name="interests" value ="야구"/>야구
+							<form:checkbox path = "interests"  name="interests" value ="풋살"/>풋살
+							<form:checkbox path = "interests"  name="interests" value ="여행"/>여행
+							<form:checkbox path = "interests"  name="interests" value ="운동"/>운동
+							<form:checkbox path = "interests"  name="interests" value ="요리"/>요리
+							<form:checkbox path = "interests"  name="interests" value ="방탈출"/>방탈출
 							</td>
 								</tr>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>

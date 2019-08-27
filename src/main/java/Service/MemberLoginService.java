@@ -42,10 +42,9 @@ public class MemberLoginService {
 		if (member == null) {
 			model.addAttribute("msg111", "계정이 존재하지 않습니다.");
 		} else {
-			AuthInfo authInfo = new AuthInfo(member.getMemberId(), member.getEmail(), member.getMemberName());
+			/*AuthInfo authInfo = new AuthInfo(member.getMemberId(), member.getEmail(), member.getMemberName());
 			session.setAttribute("memid", authInfo);
-		}
-			/*
+		}*/
 			if (member.getMemberGrade() == 0) {
 				System.out.println("관리자");
 				AuthInfo authInfo = new AuthInfo(member.getMemberId(), member.getEmail(), member.getMemberName());
@@ -62,7 +61,7 @@ public class MemberLoginService {
 				session.setAttribute("memid", authInfo);
 				path = "redirect:main";
 			}
-		} */
+		}
 		return "redirect:main";
 	}
 }

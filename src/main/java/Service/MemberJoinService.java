@@ -31,6 +31,7 @@ public class MemberJoinService {
 		member.setMemberPw(mjc.getPw());
 		member.setAddr(mjc.getAddr());
 		member.setEmailAddr(mjc.getEmailAddr());
+		member.setInterests(mjc.getInterests());
 		sessionRepository.insertMember(member);
 		path = "MemberView/Main";
 		return path;
