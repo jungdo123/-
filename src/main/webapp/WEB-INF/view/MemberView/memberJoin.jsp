@@ -25,86 +25,102 @@
 	<script type="text/javascript">
 	
 		// 회원가입 화면의 입력값들을 검사한다.
-		$(function(){
+		  $(function(){
 
-	$("#submit1").click(function(){
-		if($("#id1").val()==""|| $("#id1").val()==null){
-			$("#id1").focus();
-			alert("아이디를 입력하세요");
-			return false;
-		}
-		if($("#pw").val()==""|| $("#pw").val()==null){
-			$("#pw").focus();
-			alert("비밀번호를 입력하세요.");
-			return false;
-		}
-		if($("#pw").val() != $("#pwCon").val()){
-			$("#pwCon").focus();
-			alert("비밀번호가 일치하지 않습니다.");
-			return false;
-		}
-		if($("#userName").val()==""|| $("#userName").val()==null){
-			$("#userName").focus();
-			alert("사용자 이름을 입력하세요.");
-			return false;
-		}
-		if($("#birthyy").val()==00){
-			$("#birthyy").focus();
-			alert("년도를 입력하세요.");
-			return false;
-		}
-		if($("#birthmm").val()==00){
-			$("#birthmm").focus();
-			alert("월을 입력하세요.");
-			return false;
-		}
-		if($("#birthdd").val()==00){
-			$("#birthdd").focus();
-			alert("날짜를 입력하세요.");
-			return false;
-		}
-		if($("#gender").val()==""|| $("#gender").val()==null){
-			$("#gender").focus();
-			alert("사용자 성별을 입력하세요.");
-			return false;
-		}
-		if($("#email").val()==""|| $("#email").val()==null){
-			$("#email").focus();
-			alert("사용자 이메일을 입력하세요.");
-			return false;
-		}
-		if($("#memberPh").val()==""|| $("#memberPh").val()==null){
-			$("#memberPh").focus();
-			alert("사용자 연락처을 입력하세요.");
-			return false;
-		}
-		if($("#sample6_postcode").val()==""|| $("#sample6_postcode").val()==null){
-			$("#sample6_postcode").focus();
-			alert("사용자 주소를 입력하세요.");
-			return false;
-		}
-		if($("#sample6_detailAddress").val()==""|| $("#sample6_detailAddress").val()==null){
-			$("#sample6_detailAddress").focus();
-			alert("사용자 상세주소를 입력하세요.");
-			return false;
-		}
-		if($("#confirmNum").val() == "1"){
-			alert("아이디 중복확인을 해주세요.");
-			return false;
-		}
-		$("#frm").submit();
-	});
+   var getMail = RegExp(/^[A-Za-z0-9_\.\-]/);
+   var getName= RegExp(/^[가-힣]+$/);
 
-	$("#confirmId").click(function(){
-		if($("#id1").val()==""|| $("#id1").val()==null){
-			$("#id1").focus();
-			$("#msg").html("아이디를 입력하세요");
-			return false;
-		}
-		var url = "confirmId?id1="+$("#id1").val();
-		open(url,"confirm","width=300, height=500");
-	});
-});	
+   $("#submit1").click(function(){
+      if($("#id1").val()==""|| $("#id1").val()==null){
+         $("#id1").focus();
+         alert("아이디를 입력하세요");
+         return false;
+      }
+      if($("#pw").val()==""|| $("#pw").val()==null){
+         $("#pw").focus();
+         alert("비밀번호를 입력하세요.");
+         return false;
+      }
+      if($("#pw").val() != $("#pwCon").val()){
+         $("#pwCon").focus();
+         alert("비밀번호가 일치하지 않습니다.");
+         return false;
+      }
+      if($("#userName").val()==""|| $("#userName").val()==null){
+         $("#userName").focus();
+         alert("사용자 이름을 입력하세요.");
+         return false;
+      }
+      if(!getName.test($("#userName").val())){
+         alert("이름형식에 맞게 입력해주세요") 
+         $("#userName").val(""); 
+         $("#userName").focus(); 
+         return false; 
+      }
+      if($("#birthyy").val()==00){
+         $("#birthyy").focus();
+         alert("년도를 입력하세요.");
+         return false;
+      }
+      if($("#birthmm").val()==00){
+         $("#birthmm").focus();
+         alert("월을 입력하세요.");
+         return false;
+      }
+      if($("#birthdd").val()==00){
+         $("#birthdd").focus();
+         alert("날짜를 입력하세요.");
+         return false;
+      }
+      if($("#gender").val()==""|| $("#gender").val()==null){
+         $("#gender").focus();
+         alert("사용자 성별을 입력하세요.");
+         return false;
+      }
+      if($("#email").val()==""|| $("#email").val()==null){
+         $("#email").focus();
+         alert("사용자 이메일을 입력하세요.");
+         return false;
+      }
+      if(!getMail.test($("#email").val())){
+         alert("이메일형식에 맞게 입력해주세요") 
+         $("#email").val(""); 
+         $("#email").focus(); 
+         return false; 
+      }
+      if($("#memberPh").val()==""|| $("#memberPh").val()==null){
+         $("#memberPh").focus();
+         alert("사용자 연락처을 입력하세요.");
+         return false;
+      }
+      if($("#sample6_postcode").val()==""|| $("#sample6_postcode").val()==null){
+         $("#sample6_postcode").focus();
+         alert("사용자 주소를 입력하세요.");
+         return false;
+      }
+      if($("#sample6_detailAddress").val()==""|| $("#sample6_detailAddress").val()==null){
+         $("#sample6_detailAddress").focus();
+         alert("사용자 상세주소를 입력하세요.");
+         return false;
+      }
+      if($("#confirmNum").val() == "1"){
+         alert("아이디 중복확인을 해주세요.");
+         return false;
+      }
+      $("#frm").submit();
+   });
+
+   $("#confirmId").click(function(){
+      if($("#id1").val()==""|| $("#id1").val()==null){
+         $("#id1").focus();
+         $("#msg").html("아이디를 입력하세요");
+         return false;
+      }
+      var url = "confirmId?id1="+$("#id1").val();
+      open(url,"confirm","width=300, height=500");
+   });
+});   
+
 		
 		
 		// 취소 버튼 클릭시 첫화면으로 이동
@@ -129,12 +145,7 @@
 		
 	</script>
 </head>
-<body>
-		<br><br>
-		<b><font size="6" color="gray">회원가입</font></b>
-		<br><br><br>
-		
-		
+<body>		
 		<!-- 입력한 값을 전송하기 위해 form 태그를 사용한다 -->
 		<!-- 값(파라미터) 전송은 POST 방식, 전송할 페이지는 JoinPro.jsp -->
 <form:form action = "MemberJoinAction" name = "frm" id = "frm" method="POST"
@@ -283,7 +294,12 @@
 				<tr>
 					<th id="title">이메일</th>
 					<td>
-<form:input path="email" id="email" style="width:25%" maxlength="20"/>&nbsp@&nbsp<form:input path="emailAddr" id="emailAddr" style="width:25%" maxlength="50"/>
+<form:input path="email" id="email" style="width:25%" maxlength="20"/>&nbsp@&nbsp<form:select path="emailAddr" id="emailAddr" style="width:25%" maxlength="50">
+                     <option>naver.com</option>
+                     <option>daum.net</option>s
+                     <option>gmail.com</option>
+                     <option>nate.com</option>                  
+                  </form:select>
 					</td>
 				</tr>
 					

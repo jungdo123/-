@@ -10,6 +10,6 @@
 <a href="memberModify" >정보수정</a>
 <a href="logout" >로그아웃</a>
 <a href="pwModify" >비밀번호변경</a>
-<a href="memMod">회원정보 수정</a>
+<a href="memDel" >회원탈퇴</a>
 </body>
 </html>

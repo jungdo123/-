@@ -17,6 +17,8 @@
 	<bean id = "pwChangeActService" class="Service.PwChangeActService" />
 	<bean id = "memberModService" class="Service.MemberModService" />
 	<bean id = "memberConfirmIdService" class="Service.MemberConfirmIdService" />
+	<bean id = "memberDeleteService" class="Service.MemberDeleteService" />
+	
 	<bean id = "partnerAddService" class = "Service.PartnerAddService" />
 	<bean id = "searchPartnerService" class = "Service.SearchPartnerService" />
 	<bean id = "partnerMoreService" class = "Service.PartnerMoreService" />

@@ -1,31 +1,33 @@
 package Repository;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import Command.PwChangeCommand;
 import Model.DTO.Member;
+import Model.DTO.StartEndPage;
 
 @Repository
 public class SessionRepository {
 	@Autowired
 	private SqlSession sqlSession;
-	private final String namespace = "MemberMapper";
-	/*
+	
 	private final String namespace = "MemberMapper";
 	public List<String> selectEmail(){
 		List<String> result = null;
 		String statement =  namespace + ".selectEmail";
 		result = sqlSession.selectList(statement);
 		return result;
-	}
+	}/*
 	public List<Member> selectByRegdate(SearchCommand sc){
 		List<Member> result = null;
 		String statement =  namespace + ".selectByRegdate";
 		result = sqlSession.selectList(statement, sc);
 		return result;
-	}*/
+	}/**/
 	public int pwChange(PwChangeCommand pwChange) {
 		int result = 0;
 		String statement =  namespace + ".pwChange";
@@ -50,21 +52,13 @@ public class SessionRepository {
 		member = sqlSession.selectOne(statement,member);
 		return member;
 	}
-	public Member userCheck(String memberId, String memberPw) {
-		System.out.println("userCheck");
-		Member member = new Member();
-		member.setMemberId(memberId);
-		member.setMemberPw(memberPw);
-		String statement =  namespace + ".userCheck";
-		member = sqlSession.selectOne(statement,member);
-		return member;
-	}/*
+	/*
 	public int updateMember(Member member) {
 		int result = 0;
 		String statement =  namespace + ".updateMember";
 		result = sqlSession.update(statement, member);
 		return result;
-	}
+	}*/
 	public int getListCount() {
 		int result = 0;
 		String statement =  namespace + ".getListCount"; 
@@ -81,13 +75,13 @@ public class SessionRepository {
 		String statement =  namespace + ".getMemberList"; 
 		result = sqlSession.selectList(statement, startEndPage);
 		return result;
-	}*/
+	}
 	public Member selectMember(String id1) {
 		Member member = null;
 		String statement =  namespace + ".memberSelectId"; 
 		member = sqlSession.selectOne(statement, id1);
 		return member;
-	}/*
+	}
 	public int memberDel(String memberId, String memberPw) {
 		Member member = new Member();
 		member.setMemberId(memberId);
@@ -96,7 +90,16 @@ public class SessionRepository {
 		String statement =  namespace + ".memberDel"; 
 		result = sqlSession.delete(statement, member);
 		return result;
-	}*/
+	}
+	public Member userCheck(String memberId, String memberPw) {
+		System.out.println("userCheck");
+		Member member = new Member();
+		member.setMemberId(memberId);
+		member.setMemberPw(memberPw);
+		String statement =  namespace + ".userCheck";
+		member = sqlSession.selectOne(statement,member);
+		return member;
+	}
 	public String getSelectId(String id1) {
 		String memberId = null;
 		String statement =  namespace + ".memberSelectId"; 
@@ -113,5 +116,4 @@ public class SessionRepository {
 		sqlSession.insert(statement, member);
 		
 	}
-
 }

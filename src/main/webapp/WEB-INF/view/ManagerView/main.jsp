@@ -138,7 +138,7 @@
                            </header>
                            <ul>
                               <li><a href="#">관리자 메인페이지</a></li>
-                              
+                              <li><a  href="logout"> 로그아웃 </a></li>
                               <li>
                                  <span class="opener">회원관리</span>
                                  <ul>

@@ -13,14 +13,14 @@ public class MemberModService {
 	@Autowired
 	private SessionRepository sessionRepository;
 
-	public String getMmeber(Model model, HttpSession session) {
+	public String getMember(Model model, HttpSession session) {
 		String id1 = ((AuthInfo) session.getAttribute("memid")).getId1();
 		Member member = sessionRepository.selectMember(id1);
 		String path = null;
 		if (member == null) {
 			path = "redirect:main";
 		} else {
-			path = "MemberView/memMod";
+			path = "MemberView/memberMod";
 		}
 		model.addAttribute("member12", member);
 		return path;

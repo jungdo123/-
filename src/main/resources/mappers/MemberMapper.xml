@@ -51,4 +51,8 @@
 		set member_pw = #{newPw}
 		where member_id = #{memberId} and member_pw = #{pw}
 	</update>
+	<delete id="memberDel" parameterType="Member">
+		delete  from member
+		where MEMBER_ID = #{memberId} AND MEMBER_PW = #{memberPw}
+	</delete>
 </mapper>

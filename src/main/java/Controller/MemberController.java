@@ -15,6 +15,7 @@ import Command.LoginCommand;
 import Command.MemberJoinCommand;
 import Command.PwChangeCommand;
 import Service.MemberConfirmIdService;
+import Service.MemberDeleteService;
 import Service.MemberJoinService;
 import Service.MemberLoginService;
 import Service.MemberLogoutService;
@@ -32,13 +33,9 @@ public class MemberController {
 	@Autowired
 	private MemberLogoutService memberLogoutService;
 	@Autowired
-	private PwChangeService pwChangeService;
-	@Autowired
-	private PwChangeActService pca;
-	@Autowired
-	private MemberModService mms;
-	@Autowired
 	private MemberConfirmIdService memberConfirmIdService;
+	@Autowired
+	private MemberDeleteService memberDeleteService;
 
 	@RequestMapping("/moveReg")
 	public String terms(Model model) {
@@ -88,30 +85,18 @@ public class MemberController {
 		return "MemberView/mypage";
 	}
 
-	@RequestMapping("/pwModify")
-	public String pwchange(Model model) {
-		return "MemberView/pwchange1";
-	}
-
-	@RequestMapping("/pwcheck")
-	public String submit(@RequestParam(value = "pw") String pw, HttpSession session) {
-		String path = pwChangeService.pwChange(session, pw);
-		return path;
-	}
-
-	@RequestMapping("/pwChangeAction")
-	public String pwchanAc(PwChangeCommand pwChangeCommand, Model model, HttpSession session, Errors errors) {
-		String path = "";
-		new ChangePwdCommandValidator().validate(pwChangeCommand, errors);
-		if (errors.hasErrors())
-			return "MemberView/pwchange2";
-		path = pca.pwChange(session, pwChangeCommand, model);
-		return path;
+	
+	
+	@RequestMapping("/memDel")
+	public String memDel() {
+		return "MemberView/memberDelete";
 	}
 	
-	@RequestMapping("memMod")
-	public String memMod(Model model,HttpSession session) {
-		String path = mms.getMmeber(model,session);
+	@RequestMapping("/memdelAct")
+	public String memberDeleteAction(HttpSession session, Model model,
+			@RequestParam(value = "pw") String pw,
+			HttpServletResponse response) {
+		String path = memberDeleteService.memberDeleteAct(session, pw, response);
 		return path;
 	}
 }
