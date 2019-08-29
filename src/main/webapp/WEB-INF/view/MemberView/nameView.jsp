@@ -7,9 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="nameChangeAction">
-<input type="text" name="rename" placeholder="${member12.memberName}"> 
-<input type="submit" value="수정">
-</form>
+<a href = "nameChangeCheck" >${member12.memberName}</a>
 </body>
 </html>

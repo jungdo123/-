@@ -5,6 +5,7 @@
 	<typeAliases>
 		<typeAlias type="Model.DTO.Member" alias="Member"/>
 		<typeAlias type="Command.PwChangeCommand" alias="PwChan"/>
+		<typeAlias type="Command.EmailChangeCommand" alias="EmailChange"/>
 		<typeAlias type="Model.DTO.Partner" alias="Partner"/>
 		<typeAlias type="Model.DTO.StartEndPage" alias="StartEndPage"/>
 	</typeAliases>

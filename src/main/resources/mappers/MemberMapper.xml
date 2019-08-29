@@ -13,7 +13,7 @@
 	</insert>
 	<sql id="basecolumn">
 		MEMBER_ID, MEMBER_NUM, MEMBER_PW, MEMBER_BIR, 
-		GENDER, EMAIL, MEMBER_PH, MEMBER_GRADE, MEMBER_REG, MEMBER_NAME
+		GENDER, EMAIL, MEMBER_PH, MEMBER_GRADE, MEMBER_REG, MEMBER_NAME, EMAILADDR
 	</sql>
 	<resultMap type="Member" id="baseMember">
 		<id column="MEMBER_NUM" jdbcType="BIGINT" property="memberNum"/>
@@ -46,11 +46,23 @@
 		from member
 		where member_id = #{memberId}
 	</select>
+	
 	<update id="pwChange" parameterType="pwChan">
 		update member
 		set member_pw = #{newPw}
 		where member_id = #{memberId} and member_pw = #{pw}
 	</update>
+	<update id="nameChange" parameterType="Member">
+		update member
+		set member_name = #{memberName}
+		where member_id = #{memberId}
+	</update>
+	<update id="emailChange" parameterType="EmailChange">
+		update member
+		set email = #{email} and emailAddr = #{emailAddr}
+		where member_id = #{memberId}
+	</update>
+	
 	<delete id="memberDel" parameterType="Member">
 		delete  from member
 		where MEMBER_ID = #{memberId} AND MEMBER_PW = #{memberPw}

@@ -85,8 +85,6 @@ public class MemberController {
 		return "MemberView/mypage";
 	}
 
-	
-	
 	@RequestMapping("/memDel")
 	public String memDel() {
 		return "MemberView/memberDelete";

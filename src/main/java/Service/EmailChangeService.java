@@ -7,16 +7,17 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import Command.AuthInfo;
+import Command.EmailChangeCommand;
 import Repository.SessionRepository;
 
 @Service
-public class NameChangeService {
+public class EmailChangeService {
 	@Autowired
 	private SessionRepository sessionRepository;
-	public String nameChange(String rename, HttpSession session, Model model) {
+	public String nameChange(EmailChangeCommand emailChangeCommand, HttpSession session, Model model) {
 		// TODO Auto-generated method stub
-		String memid = ((AuthInfo)session.getAttribute("memid")).getId1();
-		sessionRepository.nameChange(memid, rename);
+		emailChangeCommand.setMemberId(((AuthInfo)session.getAttribute("memid")).getId1());
+		sessionRepository.emailChange(emailChangeCommand);
 		String path = "redirect:nameMod";
 		return path;
 	}

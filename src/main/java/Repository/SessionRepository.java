@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import Command.EmailChangeCommand;
 import Command.PwChangeCommand;
 import Model.DTO.Member;
 import Model.DTO.StartEndPage;
@@ -32,6 +33,15 @@ public class SessionRepository {
 		int result = 0;
 		String statement =  namespace + ".pwChange";
 		result = sqlSession.update(statement, pwChange);
+		return result;
+	}
+	public int nameChange(String memid, String rename) {
+		Member member = new Member();
+		int result = 0;
+		member.setMemberId(memid);
+		member.setMemberName(rename);
+		String statement = namespace + ".nameChange";
+		result = sqlSession.update(statement, member);
 		return result;
 	}
 	/*
@@ -80,6 +90,7 @@ public class SessionRepository {
 		Member member = null;
 		String statement =  namespace + ".memberSelectId"; 
 		member = sqlSession.selectOne(statement, id1);
+		System.out.println(member.getEmailAddr());
 		return member;
 	}
 	public int memberDel(String memberId, String memberPw) {
@@ -115,5 +126,11 @@ public class SessionRepository {
 		String statement = namespace + ".memberInsert";
 		sqlSession.insert(statement, member);
 		
+	}
+	public int emailChange(EmailChangeCommand emailChange) {
+		int result = 0;
+		String statement =  namespace + ".emailChange";
+		result = sqlSession.update(statement, emailChange);
+		return result;
 	}
 }
