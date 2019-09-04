@@ -12,4 +12,6 @@
 	<bean class = "Controller.MemberModifyController"/>
 	<bean class = "Controller.PartnerDeleteController"/>
 	<bean class = "Controller.PartnerModifyController"/>
+	<bean class = "Controller.BoardController"/>
+	<bean class = "Controller.BoardListController"/>
 </beans>

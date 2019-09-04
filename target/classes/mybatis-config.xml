@@ -8,5 +8,6 @@
 		<typeAlias type="Command.EmailChangeCommand" alias="EmailChange"/>
 		<typeAlias type="Model.DTO.Partner" alias="Partner"/>
 		<typeAlias type="Model.DTO.StartEndPage" alias="StartEndPage"/>
+		<typeAlias type="Model.DTO.Board" alias = "Board"/>
 	</typeAliases>
 </configuration>

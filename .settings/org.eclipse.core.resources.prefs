@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+encoding//src/main/java/Service/BoardListService.java=UTF-8
 encoding//src/main/java/Service/MemberConfirmIdService.java=UTF-8
 encoding//src/main/java/Service/MemberLoginService.java=UTF-8
 encoding//src/main/resources/message/error.properties=UTF-8

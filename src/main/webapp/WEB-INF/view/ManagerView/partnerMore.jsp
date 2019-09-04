@@ -140,11 +140,11 @@ function parDel(){
 		</tr>		
 	</table>	
 	</c:if>
-	<form name="del" id = "del" method ="post" action = "../partnerModifyAction">
+<form name="frm" id = "frm" method ="post" action = "">
 		<c:if test="${! empty pt}" >
 		<input type= "hidden" value = "${pt.partnerId }"  name= "partnerId"/>
-	</c:if>
-	</form>
+		</c:if>
+		</form>
 
 
 </body>

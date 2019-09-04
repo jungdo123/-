@@ -157,6 +157,11 @@ section, summary, time, mark, audio, video {
        									<%}else { %>
        									<li>
           								<a  href="mypage"> 마이페이지 </a>
+          								<ul>
+          								<li><a href="memberModify" >정보수정</a></li>
+										<li><a href="pwModify" >비밀번호변경</a></li>
+										<li><a href="memDel" >회원탈퇴</a></li>
+								       </ul>
           								</li>
           								<li>
           								<a  href="logout">Log Out</a>

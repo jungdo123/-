@@ -17,7 +17,7 @@ public class NameChangeService {
 		// TODO Auto-generated method stub
 		String memid = ((AuthInfo)session.getAttribute("memid")).getId1();
 		sessionRepository.nameChange(memid, rename);
-		String path = "redirect:nameMod";
+		String path = "redirect:memberModify";
 		return path;
 	}
 

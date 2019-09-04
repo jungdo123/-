@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import Command.EmailChangeCommand;
 import Command.PwChangeCommand;
+import Model.DTO.Board;
 import Model.DTO.Member;
 import Model.DTO.StartEndPage;
 
@@ -15,7 +16,7 @@ import Model.DTO.StartEndPage;
 public class SessionRepository {
 	@Autowired
 	private SqlSession sqlSession;
-	
+	private final String board1 = "BoardMapper";
 	private final String namespace = "MemberMapper";
 	public List<String> selectEmail(){
 		List<String> result = null;
@@ -133,4 +134,27 @@ public class SessionRepository {
 		result = sqlSession.update(statement, emailChange);
 		return result;
 	}
+	public void insertBoard(Board board) {
+		String statement = board1 + ".boardInsert";
+		sqlSession.insert(statement, board);
+
+	}
+	public  List<Board> getBoardList(int page1,int limit){
+		List<Board> result = null;
+		Long startRow = ((long)page1 -1 ) * 10 +1;
+		Long endRow = startRow + limit -1;
+		StartEndPage startEndPage = new StartEndPage();
+		startEndPage.setEndRow(endRow);
+		startEndPage.setStartRow(startRow);
+		String statement =  board1 + ".getBoardList"; 
+		result = sqlSession.selectList(statement, startEndPage);
+		return result;
+	}
+
+	public int getBoardListCount() {
+			int result = 0;
+			String statement =  board1 + ".getListCount"; 
+			result = sqlSession.selectOne(statement);
+			return result;
+		}
 }

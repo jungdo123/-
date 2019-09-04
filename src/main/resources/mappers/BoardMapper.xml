@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="BoardMapper">
+<cache />
+<insert id="boardInsert" parameterType="Board" >
+insert into PARTNER_COM(ITEM_NUM, DO_SI, KU, WH_CPN, ITEM_EX, ITEM_BUY_PR2, ITEM_STK2, ITEM_RUN2, ITEM_MIMIT2, RS_SORT, 
+ITEM_IMG, IMG_NAME)
+values (ITEM_NUM.nextval,#{doSi}, #{ku}, #{whCpn},
+ #{itemEx}, #{itemBuyPr2}, #{itemStk2}, #{itemRun2}, #{itemMimit2}, #{rsSort}, #{itemImg}, #{imgName})
+ 
+</insert>
+<sql id = "boardcolumn">
+ITEM_NUM,DO_SI,KU,WH_CPN,ITEM_EX,ITEM_BUY_PR2,ITEM_STK2,
+ITEM_RUN2,ITEM_MIMIT2,RS_SORT,ITEM_IMG,IMG_NAME
+</sql>
+<resultMap type="Board" id="baseBoard">
+		<id column="ITEM_NUM" jdbcType="BIGINT" property="itemNum"/>
+		<result column="DO_SI" jdbcType="VARCHAR" property="doSi"/>
+		<result column="KU" jdbcType = "VARCHAR" property="ku"/>
+		<result column="WH_CPN" jdbcType="VARCHAR" property="whCpn"/>
+		<result column="ITEM_EX" jdbcType="VARCHAR" property="itemEx"/>
+		<result column="ITEM_BUY_PR2" jdbcType="BIGINT" property="itemBuyPr2"/>
+		<result column="ITEM_STK2" jdbcType="BIGINT" property="itemStk2"/>
+		<result column="ITEM_RUN2" jdbcType="TIMESTAMP" property="itemRun2"/>
+		<result column="ITEM_MIMIT2" jdbcType="BIGINT" property="itemMimit2"/>
+		<result column="RS_SORT" jdbcType="VARCHAR" property="rsSort"/>
+		<result column="ITEM_IMG" jdbcType="VARCHAR" property="itemImg"/>
+		<result column="IMG_NAME" jdbcType="VARCHAR" property="imgName"/>
+	</resultMap>
+
+	
+	<select id= "getBoardList" parameterType="StartEndPage" resultMap="baseBoard">
+		select * from ( select rownum rn, 
+								<include refid="boardcolumn" />
+						 from (select 
+						       <include refid="boardcolumn" />
+						       from PARTNER_COM
+							   order by ITEM_NUM desc) )
+
+		where rn &gt;= #{startRow} and rn &lt;= #{endRow}
+		</select>			
+		<select id="getListCount" resultType="int">
+		select count(*) from PARTNER_COM
+	</select>
+</mapper> 

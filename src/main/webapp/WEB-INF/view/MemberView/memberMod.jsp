@@ -11,7 +11,6 @@
 		<title>Editorial by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		 <link rel="stylesheet" href="assets/css/main.css"/>
 		<style>
       table {width: 10000px;  height : 500px;font-size : 15px; display:inline; }
       .table tr th{ text-align:center }
@@ -218,8 +217,45 @@ text-decoration:none;
 .manubas p{
 clear:left;
 }
-
+			.popup_panel { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 100;}
+            .popup_panel div.popup_bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background:#000; opacity:.5; filter:alpha(opacity=50); }
+            .popup_panel div.popup_contents { position: absolute; top: 50%; left: 50%; width: 410px; height: 200px; border:2px solid #5294DE; background-color:#fff; }
       </style>
+      <script type="text/javascript" 
+   src="http://code.jquery.com/jquery-latest.js" ></script>
+ <script type="text/javascript" 
+          src="/mybatis-spring-smrit/js/jquery.form.js"></script>
+      <script type="text/javascript">
+      $(document).ready(function() {
+          var $panel = $(".popup_panel");
+          var $panelContents = $panel.find(".popup_contents");
+          $("#btn_popup_open").on("click", function(e) {
+              // 팝업 가운데 설정(가로)
+              if ($panelContents.outerWidth() < $(document).width()) {
+                  $panelContents.css("margin-left", "-" + $panelContents.outerWidth() / 2 + "px");
+              } else {
+                  $panelContents.css("left", "0px");
+              }
+           // 팝업 가운데 설정(세로)
+              if ($panelContents.outerHeight() < $(document).height()) {
+                  $panelContents.css("margin-top", "-" + $panelContents.outerHeight() / 2 + "px");
+              } else {
+                  $panelContents.css("top", "0px");
+              }
+              // 레이어 팝업 열기
+              $panel.fadeIn();
+          });
+          // 팝업 닫기 이벤트 정의
+          $("#btn_popup_close").on("click", popupClose);
+         // 팝업 배경 클릭 이벤트 정의
+          $panel.find(".popup_bg").on("click", popupClose);
+          function popupClose(e) {
+              $panel.fadeOut();
+            // 이벤트 기본 동작 중단
+              e.preventDefault();
+          }
+      });
+      </script>
       
 	</head>
 	<body class="is-preload">
@@ -280,10 +316,6 @@ clear:left;
 						<div class="inner">
 
 							<!-- Header -->
-								<header id="header">
-									<a href="index.html" class="logo"><strong>개인정보</strong></a>
-								</header>
-
 <!-- Content -->
 							
 							<br/><br/>
@@ -293,7 +325,17 @@ clear:left;
           								<a href="#">아이디 : ${member12.memberId} </a>
           								</li>
           								<li>
-          								<a  href="nameMod">이름 : ${member12.memberName}</a>
+										<a href="javascript:void(0)" id="btn_popup_open">이름 : ${member12.memberName}</a>
+        					<div class="popup_panel">
+          					<div class="popup_bg"></div>
+            				<div class="popup_contents">
+            	<form action="nameChangeAction">
+				<input type="text" name="rename" placeholder="${member12.memberName}"> 
+				<input type="submit" value="수정">
+				</form>
+                <a href="javascript:void(0)" id="btn_popup_close">닫기</a>
+        </div>
+       </div>
           								</li>
           								<li>
           								<a  href="pwModify">비밀번호 : ********* </a>

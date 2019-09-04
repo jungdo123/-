@@ -24,6 +24,10 @@
 	<bean id = "emailModService" class="Service.EmailModService" />
 	<bean id = "birthModService" class="Service.BirthModService" />
 	
+	<bean id = "BoardJoinService" class = "Service.BoardJoinService"/>
+    <bean id = "board" class="Model.DTO.Board"/>
+    <bean id = "BoardListService" class="Service.BoardListService" />
+	
 	<bean id = "partnerAddService" class = "Service.PartnerAddService" />
 	<bean id = "searchPartnerService" class = "Service.SearchPartnerService" />
 	<bean id = "partnerMoreService" class = "Service.PartnerMoreService" />
