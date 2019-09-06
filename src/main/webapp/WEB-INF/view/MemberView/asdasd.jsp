@@ -135,8 +135,7 @@ section, summary, time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;}
       </style>
-      
-	</head>
+</head>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
@@ -144,32 +143,37 @@ section, summary, time, mark, audio, video {
 
 				<!-- Main -->
 					<div id="main">
-					<div class="menubars">
+
+								  <div class="menubars">
 								       <ul>
 										<li>
 										<%if(session.getAttribute("memid")==null) { %>
-           								<a href="login">Log In</a>
-           								</li>
-           								<li>		
-								  <a id="#services" href="moveReg">Sign Up</a>
-								   
-								 </li>
+           								<a href="mainView.naver">Log In</a>
        									<%}else { %>
-       									<li>
-          								<a  href="mypage"> 마이페이지 </a>
-          								<ul>
-          								<li><a href="memberModify" >정보수정</a></li>
-										<li><a href="pwModify" >비밀번호변경</a></li>
-										<li><a href="memDel" >회원탈퇴</a></li>
-								       </ul>
+          								<a  href="/OurArtGallery/memberInfo.naver">${memid } 님 환영합니다 </a>
+          								<a  href="/OurArtGallery/Logout.naver">Log Out</a>
           								</li>
-          								<li>
-          								<a  href="logout">Log Out</a>
-          								</li>
+										 <ul>
+										</ul>
+										 </li>
 										 <% } %>
-								  
+								         <li>
+											         			         
+										
+								  <a id="#services" href="#">Services</a>
+								   <ul>
+								    <li><a href="#">aaa</a></li>
+								    <li><a href="#">bbb</a></li>
+								    <li><a href="#">ccc</a></li>
+								   </ul>
+								 </li>
 								         <li>
 								           <a href="#education">Education</a>
+								           <ul>
+								       <li><a href="#">aaa</a></li>
+								       <li><a href="#">bbb</a></li>
+								       <li><a href="#">ccc</a></li>
+								      </ul>
 								         </li>
 								         <li>
 								           <a href="#auction">Auction</a>
@@ -198,44 +202,31 @@ section, summary, time, mark, audio, video {
 								       </ul>
 									 </div>
 						<div class="inner">
-						
-						<!-- Section -->
+
+
+							<!-- Section -->
 							
+<c:if test="${! empty itemList}">
 								<section>
+									<header class="major">
+										<h2>상품 목록</h2>
+										<li><a href="insertItem.item" class="button">상품 등록</a></li>
+									</header>
 									<div class="posts">
+										<c:forEach var="item" items="${itemList}">
 										<article>
-											<a href="restaurant" class="image"><img src="/images/food.jpg" alt="" height=400; /></a>
+											<a href="itemDetails.item?itemId=${item.itemId}" class="image"><img src="ShoppingView/images/${item.itemImage}" alt="" height=400; /></a>
+											<h3>${item.itemName}</h3>
+											<h3>가격 : ${item.itemPrice} 원</h3>
+											<p>${item.itemExp}</p>
 											<ul class="actions">
-												<li><a href="restaurant" class="button">식당</a></li>
+												<li><a href="itemDetails.item?itemId=${item.itemId}" class="button">More</a></li>
 											</ul>
 										</article>
-										<article>
-											<a href="#" class="image"><img src="/images/food.jpg" alt="" height=400; /></a>
-											<ul class="actions">
-												<li><a href="#" class="button">여가활동</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="/images/food.jpg" alt="" height=400; /></a>
-											<ul class="actions">
-												<li><a href="#" class="button">문화생활</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="/images/food.jpg" alt="" height=400; /></a>
-											<ul class="actions">
-												<li><a href="#" class="button">자유게시판</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="/images/food.jpg" alt="" height=400; /></a>
-											<ul class="actions">
-												<li><a href="#" class="button">모집게시판</a></li>
-											</ul>
-										</article>
+									</c:forEach>
 									</div>
 								</section>
-								
+</c:if>
 						</div>
 					</div>
 				
@@ -303,8 +294,49 @@ section, summary, time, mark, audio, video {
 										</li>
 									</ul>
 								</nav>
-			
-							
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>추천 상품</h2>
+									</header>
+									<div class="mini-posts">
+										<article>
+											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+										</article>
+									</div>
+									<ul class="actions">
+										<li><a href="#" class="button">More</a></li>
+									</ul>
+								</section>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Get in touch</h2>
+									</header>
+									<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+									<ul class="contact">
+										<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
+										<li class="icon solid fa-phone">(000) 000-0000</li>
+										<li class="icon solid fa-home">1234 Somewhere Road #8254<br />
+										Nashville, TN 00000-0000</li>
+									</ul>
+								</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
 
 						</div>
 					</div>

@@ -7,8 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
 
 import Command.BoardJoinCommand;
 import Service.BoardJoinService;
@@ -27,6 +25,7 @@ public class BoardController {
 	@RequestMapping(value = "/BoardJoinAction" , method = RequestMethod.POST)
 	public String boardJoinAction(Model model, 
 			BoardJoinCommand boardJoinCommand, HttpServletRequest request) {
+		System.out.println("보드조인액션 실행되었습니다.");
 		System.out.println("boardJoinAction   " + boardJoinCommand.getDoSi10());
 		String path="redirect:BoardJoin";
 		try {

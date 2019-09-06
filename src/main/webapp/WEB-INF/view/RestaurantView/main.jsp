@@ -134,6 +134,10 @@ section, summary, time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;}
+	
+	li{
+   list-style:none;
+   }
       </style>
       
 	</head>
@@ -202,37 +206,12 @@ section, summary, time, mark, audio, video {
 						<!-- Section -->
 							
 								<section>
+									<header class="major">
+										<h2> 지역 선택 </h2>
+										
+									</header>
 									<div class="posts">
-										<article>
-											<a href="restaurant" class="image"><img src="/images/food.jpg" alt="" height=400; /></a>
-											<ul class="actions">
-												<li><a href="restaurant" class="button">식당</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="/images/food.jpg" alt="" height=400; /></a>
-											<ul class="actions">
-												<li><a href="#" class="button">여가활동</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="/images/food.jpg" alt="" height=400; /></a>
-											<ul class="actions">
-												<li><a href="#" class="button">문화생활</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="/images/food.jpg" alt="" height=400; /></a>
-											<ul class="actions">
-												<li><a href="#" class="button">자유게시판</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="/images/food.jpg" alt="" height=400; /></a>
-											<ul class="actions">
-												<li><a href="#" class="button">모집게시판</a></li>
-											</ul>
-										</article>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<li><a href="seoul" class="button">서울</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<li><a href="ing" class="button">인천/경기</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<li><a href="kang" class="button">강원</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<li><a href="chung" class="button">충청</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<li><a href="jeon" class="button">전라</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<li><a href="kyeong" class="button">경상</a></li>
 									</div>
 								</section>
 								

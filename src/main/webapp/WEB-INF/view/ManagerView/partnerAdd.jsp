@@ -9,6 +9,7 @@
    <meta charset="UTF-8">
       <title>제휴업체등록</title>
       <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	  <link rel="stylesheet" href="assets/css/main.css" />
 	  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js" ></script>
  	  <script type="text/javascript" src="/mybatis-spring-smrit/js/jquery.form.js"></script>
 <!--     		<script type="text/javascript">
@@ -33,7 +34,27 @@
    </script>-->
    </head>
    <body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
 
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="#" class="logo"><strong>[ 고객센터</strong>]</a>
+									<ul class="icons">
+										<li><a href="itemDetails" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+										<li><a href = "memberQue">고객센터</a></li> 
+									</ul>
+			</header>
+			<tbody>
+<br/><br/><br/>
                          <tbody>
         <form:form action="partnerAddAction" method="post" name ="frm" id = "frm" commandName ="partnerCommand">
         <table class="table">

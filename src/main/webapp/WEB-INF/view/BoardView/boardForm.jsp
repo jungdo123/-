@@ -21,8 +21,12 @@
 			cellpadding = 3 >
 	<tr><td width = 200 ><b>도/시 </b></td>
 		<td width = 400 >
-			<form:input path="doSi10" id = "doSi10" 
-				size = "12" maxlength="10"/>
+			<form:select path = "doSi10" name="doSi10" >   
+                     <form:option value="none" label="지역을 선택하세요." />
+                     <form:option value="서울특별시" label="서울특별시" />
+                     <form:option value="경기도" label="경기도" />
+                   	 <form:option value="인천광역시" label="인천광역시" />
+            </form:select>
 		</td>
 	</tr>
 	<tr><td width = 200 ><b>구</b></td>

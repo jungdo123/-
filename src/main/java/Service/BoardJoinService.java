@@ -42,6 +42,7 @@ public class BoardJoinService {
 
 	public String boardInsert(Model model, 
 			BoardJoinCommand mjc,HttpServletRequest request) throws ParseException {
+		System.out.println("boardjoinaction 이후 boardInsert가 실행되었습니다.");
 		System.out.println("boardInsert   : " + mjc.getDoSi10());
 		filePath = "WEB-INF\\view\\UploadFile\\upload\\";
 		realPath = request.getServletContext().getRealPath(filePath);

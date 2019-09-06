@@ -9,6 +9,7 @@
 >
 	<bean id = "member"  class="Model.DTO.Member" />
 	<bean id = "partner" class="Model.DTO.Partner"/>
+    <bean id = "board" class="Model.DTO.Board"/>
 	
 	<bean id = "memberJoinService" class="Service.MemberJoinService" />
 	<bean id = "memberLoginService" class="Service.MemberLoginService" />
@@ -25,7 +26,6 @@
 	<bean id = "birthModService" class="Service.BirthModService" />
 	
 	<bean id = "BoardJoinService" class = "Service.BoardJoinService"/>
-    <bean id = "board" class="Model.DTO.Board"/>
     <bean id = "BoardListService" class="Service.BoardListService" />
 	
 	<bean id = "partnerAddService" class = "Service.PartnerAddService" />
@@ -35,9 +35,11 @@
 	<bean id = "partnerDeleteActionService" class = "Service.PartnerDeleteActionService"/>
 	<bean id = "partnerDelService" class = "Service.PartnerDelService"/>
 
+	<bean id = "resLocationService" class = "Service.ResLocationService"/>
 
 	<bean id = "sessionRepository" class = "Repository.SessionRepository"/>
 	<bean id = "partnerRepository" class = "Repository.PartnerRepository"/>
+	<bean id = "serviceRepository" class = "Repository.ServiceRepository" />
 
 
 </beans>
