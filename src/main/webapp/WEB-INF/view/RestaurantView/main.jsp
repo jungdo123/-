@@ -141,6 +141,12 @@ section, summary, time, mark, audio, video {
       </style>
       
 	</head>
+	<script type="text/javascript">
+	function checkRow(event) {
+		var event_test = event;
+		alert(event_test);
+	}
+</script>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
@@ -211,7 +217,14 @@ section, summary, time, mark, audio, video {
 										
 									</header>
 									<div class="posts">
-									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<li><a href="seoul" class="button">서울</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<li><a href="ing" class="button">인천/경기</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<li><a href="kang" class="button">강원</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<li><a href="chung" class="button">충청</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<li><a href="jeon" class="button">전라</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<li><a href="kyeong" class="button">경상</a></li>
+									<form>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<li><input type="submit" id="locseoul" value="서울" onClick="checkRow(this.form.locseoul.value)"></li>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<li><input type="submit" id="locincheon" value="인천/경기" onClick="checkRow(this.form.locincheon.value)"></li>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<li><input type="submit" id="lockang" value="강원" onClick="checkRow(this.form.lockang.value)"></li>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<li><input type="submit" id="lochung" value="충청" onClick="checkRow(this.form.lochung.value)"></a></li>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<li><input type="submit" id="locjeon" value="전라" onClick="checkRow(this.form.locjeon.value)"></li>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<li><input type="submit" id="lockyeong" value="경상" onClick="checkRow(this.form.lockyeong.value)"></li>
+									</form>
 									</div>
 								</section>
 								

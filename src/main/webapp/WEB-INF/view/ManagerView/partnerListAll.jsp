@@ -58,7 +58,7 @@
                      <br/>
                      <div>
                   
-                        <div id = "total"> [ 총 기업수 : ${listcount } ] </div><br/>
+                        <div id = "total"> [ 총 기업수 : 5 ] </div><br/>
                      </div>
                            
                            
